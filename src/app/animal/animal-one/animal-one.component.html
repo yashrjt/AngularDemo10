@@ -1,0 +1,5 @@
+<p>animal-one works!</p>
+
+<ul *ngFor="let item of emp">
+    <li (click)="notifyParent($event)">{{item.employeeName}}</li>
+</ul>

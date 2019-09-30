@@ -1,0 +1,86 @@
+<p>home works!</p>
+<!-- string interpolation -->
+<p>Hello {{title}}</p>
+<p>{{1+3}}</p>
+<p>{{z?'Boolean true': 'Boolean false'}}</p>
+
+<!-- property binding -->
+<input type="text" [value]="name">
+<br>
+<!-- event binding -->
+<button (click)="onSubmit(cname.innerText)">Submit</button>
+
+<!-- template reference variable -->
+
+<div #cname>Chicago</div>
+
+<!-- Directives---1.structural directives 2.Attribute directives -->
+
+<!-- structural directives ---add or remove elements from DOM -->
+<!-- ngfor -->
+
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of empArray">
+    <tr>
+      <td>{{item.employeeName}}</td>
+      <td>{{item.age}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ngif -->
+<div *ngIf="showText">Show the text</div>
+
+
+<!-- attribute directives -ngclass -->
+<!-- safe navigation operator -->
+<p class="city"> NEW YORK</p>
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>City</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of empArray">
+    <tr [ngClass]="{emp: item.age>35}">
+      <td>{{item.employeeName}}</td>
+      <td >{{item.age}}</td>
+      <td>{{item?.city}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Pipes 1.default pipes 2.custom pipes -->
+
+<p> {{title | uppercase}} </p>
+
+<p>{{city|titlecase}},Florida</p>
+<p>{{todayDate | date:'mm/dd/yyyy'}}</p>
+
+<p>{{trainee.lName|titlecase}} , {{trainee.fName|titlecase}}</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>City</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of empArray| slice:1:4">
+    <tr [ngClass]="{emp: item.age>35}">
+      <td>{{item.employeeName}}</td>
+      <td >{{item.age}}</td>
+      <td>{{item?.city}}</td>
+    </tr>
+  </tbody>
+</table>
