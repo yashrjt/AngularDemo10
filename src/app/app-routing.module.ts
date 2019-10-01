@@ -11,7 +11,8 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'animals',component:AnimalOneComponent},
   {path:'login',component:LoginComponent},
-  {path:'connect',component:ConnectComponent}
+  {path:'connect',component:ConnectComponent},
+  {path:'**',component:HomeComponent}
 ];
 
 @NgModule({

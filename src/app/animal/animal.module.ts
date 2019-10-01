@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {SharedModule} from '../shared/shared.module';
 import { AnimalRoutingModule } from './animal-routing.module';
 import { AnimalOneComponent } from './animal-one/animal-one.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { AnimalOneComponent } from './animal-one/animal-one.component';
   imports: [
     CommonModule,
     AnimalRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   exports:[AnimalOneComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
