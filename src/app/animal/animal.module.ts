@@ -4,17 +4,20 @@ import {SharedModule} from '../shared/shared.module';
 import { AnimalRoutingModule } from './animal-routing.module';
 import { AnimalOneComponent } from './animal-one/animal-one.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DogComponent } from './dog/dog.component';
+import { CatComponent } from './cat/cat.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [AnimalOneComponent],
+  declarations: [AnimalOneComponent, DogComponent, CatComponent],
   imports: [
     CommonModule,
     AnimalRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,RouterModule
   ],
-  exports:[AnimalOneComponent],
+  exports:[AnimalOneComponent,CatComponent,DogComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AnimalModule { }

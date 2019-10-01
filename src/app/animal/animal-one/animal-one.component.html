@@ -1,4 +1,4 @@
-<p>animal-one works!</p>
+<!-- <p>animal-one works!</p>
 
 <ul *ngFor="let item of emp">
     <li (click)="notifyParent($event)">{{item.employeeName}}</li>
@@ -7,4 +7,17 @@
 <ul *ngFor="let item of animal">
    <li>{{item}}</li>
    
-</ul>
+</ul> -->
+
+<div class="animals">
+      <ul>
+            <li>
+               <a routerLink='dogs'>Dogs</a>
+            </li>
+            <li>
+                  <a routerLink='cats'>Cats</a>
+               </li>
+         </ul>
+         
+         <router-outlet></router-outlet>
+</div>

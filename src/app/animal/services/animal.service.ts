@@ -14,7 +14,7 @@ export class AnimalService {
   //cold observable/hot observables
   getAnimal(){
     console.log('get animal; called');
-      return this.http.get('https://dog.ceo/api/breeds/list/').pipe(
+      return this.http.get('https://dog.ceo/api/breeds/list/all').pipe(
         map(res=>{
         console.log("TCL: AnimalService -> getAnimal -> res", res['message'])
             return res['message'];
