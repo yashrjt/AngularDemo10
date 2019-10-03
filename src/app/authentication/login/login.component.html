@@ -1,1 +1,76 @@
-<p>login works!</p>
+<div class="card">
+        <div class="card-header">
+          Sign In!
+        </div>
+      
+        
+        <div class="card-body">
+          <form novalidate
+                autocomplete="off"
+                (ngSubmit)="login()"
+                [formGroup]="loginForm">
+      
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label"
+                     for="emailId">Email</label>
+              <div class="col-md-8">
+                <input class="form-control"
+                       id="emailId"
+                       type="email"
+                       placeholder="Email (required)"
+                      formControlName="email"
+                       [ngClass]="{'is-invalid': (loginForm.get('email').touched || 
+                                                  loginForm.get('email').dirty) &&
+                                                  !loginForm.get('email').valid }" />
+                <span class="invalid-feedback">
+                  <span *ngIf="loginForm.get('email').errors?.required">
+                    Please enter your Email.
+                  </span>
+                  <span *ngIf="loginForm.get('email').errors?.email">
+                    Not a valid email
+                  </span>
+                </span>
+              </div>
+            </div>
+      
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label"
+                     for="passwordId">Password</label>
+              <div class="col-md-8">
+                <input class="form-control"
+                       id="passwordId"
+                       type="password"
+                       placeholder="Password (required)"
+                       formControlName="password"
+                       [ngClass]="{'is-invalid': (loginForm.get('password').touched || 
+                                                loginForm.get('password').dirty) &&
+                                                !loginForm.get('password').valid }" />
+                <span class="invalid-feedback">
+                  <span *ngIf="loginForm.get('password').errors?.required">
+                    Please enter your password.
+                  </span>
+                  <span *ngIf="loginForm.controls.password.errors?.minlength">
+                        The password must be minimum 3 characters.
+                      </span>
+                  <span *ngIf="loginForm.controls.password.errors?.maxlength">
+                    The password must be less than 5 characters.
+                  </span>
+                </span>
+              </div>
+            </div>
+   
+      
+            <div class="form-group row">
+              <div class="col-md-1">
+                <button class="btn btn-primary"
+                        type="submit">
+                        <!-- [disabled]="!loginForm.valid"> -->
+                  Login
+                </button>
+              </div>
+             
+            </div>
+          </form>
+        </div>
+      </div>
+    ]
